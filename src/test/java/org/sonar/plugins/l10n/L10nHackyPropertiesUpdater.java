@@ -1,7 +1,7 @@
 /*
  * French Pack for SonarQube
- * Copyright (C) 2011-2016 SonarSource SA
- * mailto:contact AT sonarsource DOT com
+ * Copyright (C) 2011-2020 SonarSource SA
+ * mailto:info AT sonarsource DOT com
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -59,7 +59,7 @@ class L10nHackyPropertiesUpdater
 				Properties localizedProps = new Properties();
 				FileInputStream localizedBundleFile = new FileInputStream(localizedBundle);
 				localizedProps.load(localizedBundleFile);
-				
+
 				PropertiesConfiguration config = new PropertiesConfiguration();
 				config.setEncoding("UTF-8");
 				PropertiesConfigurationLayout layout = new PropertiesConfigurationLayout(config);
@@ -84,13 +84,13 @@ class L10nHackyPropertiesUpdater
 				}
 
 				layout.save(new FileWriter(localizedBundle));
-				
+
 				System.out.println("\tFixing spaces");
 				fixSpacesAroundEqualsAndScrewUpEncoding(localizedBundle);
 				System.out.println("OK: file " + localizedBundle + " contains ready-to-translate updated file.");
 			}
 		}
-		
+
 	}
 
 	// Ugly hack because Commons-config isn't configurable about spaces around the "key = value" and the
